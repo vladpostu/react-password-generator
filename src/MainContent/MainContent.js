@@ -1,14 +1,14 @@
-import React from 'react'
+import React, { Component } from 'react';
 import './MainContent.css';
 
 import ResizedArea from '../hoc/ResizedArea/ResizedArea';
 import PasswordDisplay from '../PasswordDisplay/PasswordDisplay';
-import { Component } from 'react/cjs/react.production.min';
 
 class MainContent extends Component {
 
     state = {
-        length: 8, // default value
+        // default values 
+        length: 8, 
         includeUpperLetters: false,
         includeNumbers: false,
         includeSpecialChars: false,
@@ -22,11 +22,20 @@ class MainContent extends Component {
             })
         }
 
-        const handleUpperLetters = () => {
+        const handleUpperLetters = (status) => {
             this.setState({
-                includeUpperLetters: !this.includeUpperLetters,
-            });
-            console.log("Include upper case: " + this.state.includeUpperLetters)
+                includeUpperLetters: status,
+            }, () => {
+                console.log("Include upper letters: " + this.state.includeUpperLetters)
+            })
+        }
+
+        const handleNumbers = (status) => {
+            this.setState({
+                includeNumbers: status,
+            }, () => {
+                console.log("Include upper numbers: " + this.state.includeNumbers)
+            })
         }
 
         return (
@@ -38,11 +47,11 @@ class MainContent extends Component {
                 </div>
                 <div>
                     <label>Include upper case letters</label>
-                    <input type='checkbox' name='uppercase' onChange={() => handleUpperLetters()}/>
+                    <input type='checkbox' name='uppercase' checked={this.state.includeUpperLetters} onChange={(e) => handleUpperLetters(e.target.checked)}/>
                 </div>
                 <div>
                     <label>Include numbers</label>
-                    <input type='checkbox' name='numbers'/>
+                    <input type='checkbox' name='numbers' checked={this.state.includeNumbers} onChange={(e) => handleNumbers(e.target.checked)}/>
                 </div>
                 <div>
                     <label>Include special characters</label>
