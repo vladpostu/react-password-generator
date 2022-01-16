@@ -1,5 +1,4 @@
-import React from "react";
-import { Component } from "react/cjs/react.production.min";
+import React, { Component } from "react";
 
 class PasswordDisplay extends Component {
   state = {
@@ -8,13 +7,9 @@ class PasswordDisplay extends Component {
 
   render() {
 
-    const displayPassword = () => {
-        return this.state.password;
-      };
-
     return (
         <div>
-            {displayPassword()}
+            {this.state.password}
         </div>
     )
   };
