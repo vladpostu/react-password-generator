@@ -1,0 +1,13 @@
+
+
+.flex {
+    display: flex;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.option {
+    width: 200px;
+}
