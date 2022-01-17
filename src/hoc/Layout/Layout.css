@@ -4,10 +4,24 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: 'Outfit' ,sans-serif;
 }
 
 .layout {
     width: 100%;
     overflow-x: hidden;
+}
+
+.btn {
+    background: #6E85B2;
+    color: snow;
+    font-weight: 700;
+}
+
+.btn:hover {
+    color: snow;
+}
+
+.wave {
+    width: 100vw;
 }

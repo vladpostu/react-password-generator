@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './MainContent.css';
 
-import ResizedArea from '../hoc/ResizedArea/ResizedArea';
 import PasswordDisplay from '../PasswordDisplay/PasswordDisplay';
+import wave_1 from '../imgs/waves/wave_1.png';
 
 class MainContent extends Component {
 
@@ -90,29 +90,34 @@ class MainContent extends Component {
         };
 
         return (
-            <ResizedArea>
-                <h3 className='mt-3'>Fill the module</h3>
-                <div className='flex flex-column option'>
-                    <label>Length - {this.state.length}</label> 
-                    <input name='length' type='range' min='4' max='16' value={this.state.length} onChange={(e) => handleLength(e.target.value)} />
+            <div id='main_content'>
+                <img className='wave' id='wave_1' src={wave_1}/>
+                <div className='' id='main_container'>
+                    <div className='resized'>
+                        <h3 className='mt-3' id='main_title'>Fill the fields and the job is done!</h3>
+                        <div className='flex flex-column option'>
+                            <label>Length - {this.state.length}</label> 
+                            <input name='length' type='range' min='4' max='16' value={this.state.length} onChange={(e) => handleLength(e.target.value)} />
+                        </div>
+                        <div>
+                            <label>Include upper case letters</label>
+                            <input type='checkbox' name='uppercase' checked={this.state.includeUpperLetters} onChange={(e) => handleUpperLetters(e.target.checked)}/>
+                        </div>
+                        <div>
+                            <label>Include numbers</label>
+                            <input type='checkbox' name='numbers' checked={this.state.includeNumbers} onChange={(e) => handleNumbers(e.target.checked)}/>
+                        </div>
+                        <div>
+                            <label>Include special characters</label>
+                            <input type='checkbox' name='specialCharacters' checked={this.state.includeSpecialCharacters} onChange={(e) => handleSpecialCharacters(e.target.checked)}/>
+                        </div>
+                        
+                        <button onClick={() => handlePassword(getRandomPassword())}>Generate</button>
+                        
+                        <PasswordDisplay key={this.state.password} password={this.state.password} />
+                    </div>
                 </div>
-                <div>
-                    <label>Include upper case letters</label>
-                    <input type='checkbox' name='uppercase' checked={this.state.includeUpperLetters} onChange={(e) => handleUpperLetters(e.target.checked)}/>
-                </div>
-                <div>
-                    <label>Include numbers</label>
-                    <input type='checkbox' name='numbers' checked={this.state.includeNumbers} onChange={(e) => handleNumbers(e.target.checked)}/>
-                </div>
-                <div>
-                    <label>Include special characters</label>
-                    <input type='checkbox' name='specialCharacters' checked={this.state.includeSpecialCharacters} onChange={(e) => handleSpecialCharacters(e.target.checked)}/>
-                </div>
-                
-                <button onClick={() => handlePassword(getRandomPassword())}>Generate</button>
-                
-                <PasswordDisplay key={this.state.password} password={this.state.password} />
-            </ResizedArea>
+            </div>
         )
     }
 }

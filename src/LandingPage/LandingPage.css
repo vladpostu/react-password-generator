@@ -1,0 +1,12 @@
+
+
+#landing_main {
+    justify-content: space-between;
+    width: 650px;
+    max-width: 90%;
+    margin: 2rem auto 0 auto;
+}
+
+#landing_main > div > p {
+    width: 170px;
+}
