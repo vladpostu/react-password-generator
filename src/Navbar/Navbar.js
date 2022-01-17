@@ -4,16 +4,12 @@ import './Navbar.css';
 
 const Navbar = () => {
     return (
-        <header className='header'>
-            <div className='navbar'>
-                <div className='navbar-title flex flex-subcontainer'>
-                    <h2 id='title'>Password Generator</h2>
-                </div>
-                <div className='flex-subcontainer'>
-                    <div>About</div>
-                </div>
-            </div> 
-        </header>
+      <header className="header">
+        <div className="navbar-nb">
+          <h2 id="title">react-password-generator</h2>
+          <a href="https://github.com/vladpostu/react-password-generator" target="blank">Github repository</a>
+        </div>
+      </header>
     );
 };
 

@@ -1,20 +1,33 @@
 
 
 .header {
-    padding: 1rem 0 1rem 0;
-    border-bottom: 1px solid black;
+    background: #261C2C;
+    padding: 0;
 }
 
-.header > .navbar {
+.navbar-nb {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: baseline;
     width: 80%;
-    margin: auto;
+    margin: 0 auto;
+    align-items: baseline;
+    padding: 0.8rem 0;
+}
+
+.navbar-nb > * {
+    font-size: 1rem;
+    text-decoration: none;
+    color: snow;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar-nb > a:hover {
+    text-decoration: underline;
+    color: snow;
 }
 
 #title {
-    /* font-size: 1.5rem; */
     font-weight: 700;
 }
