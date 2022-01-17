@@ -18,8 +18,8 @@ class MainContent extends Component {
     repository = {
         lowers: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],
         uppers: [],
-        numbers: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'],
-        specials: ['!', '$', '%', '&', '=', 'ç', '#']
+        numbers: [],
+        specials: []
     }
 
     render() {
@@ -35,7 +35,7 @@ class MainContent extends Component {
                 includeUpperLetters: status,
             }, () => { 
                 this.state.includeUpperLetters ? this.repository.uppers = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'] : this.repository.uppers = [];
-                console.log("Include upper letters: " + this.state.includeUpperLetters);
+                console.log("Uppers: " + this.repository.uppers);
             })
         }
 
@@ -43,6 +43,7 @@ class MainContent extends Component {
             this.setState({
                 includeNumbers: status,
             }, () => {
+                this.state.includeNumbers ? this.repository.numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'] : this.repository.numbers = [];
                 console.log("Include upper numbers: " + this.state.includeNumbers)
             })
         }
@@ -51,7 +52,8 @@ class MainContent extends Component {
             this.setState({
                 includeSpecialCharacters: status,
             }, () => {
-                console.log("Include special characters: " + this.state.includeSpecialCharacters)
+                this.state.includeSpecialCharacters ? this.repository.specials = ['!', '$', '%', '&', '=', 'ç', '#'] : this.repository.specials = [];
+                console.log("Include special characters: " + this.state.includeSpecialCharacters);
             })
         }
 
@@ -60,7 +62,6 @@ class MainContent extends Component {
                 password: pas,
             }, () => {
                 console.log("Password: " + this.state.password);
-                console.log("Repository length: " + Object.values(this.repository).length)
             })
         }
 
@@ -74,10 +75,15 @@ class MainContent extends Component {
         const getRandomPassword = () => {
           let passwordGenerated = "";
           
-          for(let i=0; i<this.state.length; i++) {
-            let randomCategory = getRandomNumber(this.repository.length);
-            let randomRepository = Object.values(this.repository).at(randomCategory);
-            passwordGenerated += Object.values(this.repository).at(randomCategory)[getRandomNumber(randomRepository.length)];
+          let  i=0;
+          while(i<this.state.length) {
+            let randomCategory = getRandomNumber(Object.values(this.repository).length);
+
+            if(Object.values(this.repository).at(randomCategory).length != 0) {
+                let randomRepository = Object.values(this.repository).at(randomCategory);
+                passwordGenerated += Object.values(this.repository).at(randomCategory)[getRandomNumber(randomRepository.length)];
+                i++;
+            }
           }
         
           return passwordGenerated;  
