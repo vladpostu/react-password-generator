@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './MainContent.css';
 
 import PasswordDisplay from '../PasswordDisplay/PasswordDisplay';
-import wave_1 from '../imgs/waves/wave_1.png';
+import wave_1 from '../../imgs/waves/wave_1.png';
 
 class MainContent extends Component {
 
@@ -13,6 +13,8 @@ class MainContent extends Component {
         includeNumbers: false,
         includeSpecialCharacters: false,
         password: '',
+        effectivePassword: '',
+        i: 0,
     }
 
     repository = {
@@ -59,10 +61,10 @@ class MainContent extends Component {
 
         const handlePassword = (pas) => {
             this.setState({
-                password: pas,
-            }, () => {
-                console.log("Password: " + this.state.password);
-            })
+                password: pas
+            });
+
+            
         }
 
         const getRandomNumber = (max) => {
@@ -79,7 +81,7 @@ class MainContent extends Component {
           while(i<this.state.length) {
             let randomCategory = getRandomNumber(Object.values(this.repository).length);
 
-            if(Object.values(this.repository).at(randomCategory).length != 0) {
+            if(Object.values(this.repository).at(randomCategory).length !== 0) {
                 let randomRepository = Object.values(this.repository).at(randomCategory);
                 passwordGenerated += Object.values(this.repository).at(randomCategory)[getRandomNumber(randomRepository.length)];
                 i++;
@@ -91,28 +93,28 @@ class MainContent extends Component {
 
         return (
             <div id='main_content'>
-                <img className='wave' id='wave_1' src={wave_1}/>
+                <img alt='dark blue wave png' className='wave' id='wave_1' src={wave_1}/>
                 <div className='' id='main_container'>
                     <div className='resized'>
                         <h3 className='mt-3' id='main_title'>Fill the fields and the job is done!</h3>
-                        <div className='flex flex-column option'>
+                        <div className='flex flex-column option input-container'  id='length_container'>
                             <label>Length - {this.state.length}</label> 
-                            <input name='length' type='range' min='4' max='16' value={this.state.length} onChange={(e) => handleLength(e.target.value)} />
+                            <input name='length' id='length' type='range' min='4' max='16' value={this.state.length} onChange={(e) => handleLength(e.target.value)} />
                         </div>
-                        <div>
+                        <div className='input-container checkbox-container'>
                             <label>Include upper case letters</label>
                             <input type='checkbox' name='uppercase' checked={this.state.includeUpperLetters} onChange={(e) => handleUpperLetters(e.target.checked)}/>
                         </div>
-                        <div>
+                        <div className='input-container checkbox-container'> 
                             <label>Include numbers</label>
                             <input type='checkbox' name='numbers' checked={this.state.includeNumbers} onChange={(e) => handleNumbers(e.target.checked)}/>
                         </div>
-                        <div>
+                        <div className='input-container checkbox-container'>
                             <label>Include special characters</label>
                             <input type='checkbox' name='specialCharacters' checked={this.state.includeSpecialCharacters} onChange={(e) => handleSpecialCharacters(e.target.checked)}/>
                         </div>
                         
-                        <button onClick={() => handlePassword(getRandomPassword())}>Generate</button>
+                        <button id='generate_button' className='btn btn-ligth' onClick={() => handlePassword(getRandomPassword())}>Generate</button>
                         
                         <PasswordDisplay key={this.state.password} password={this.state.password} />
                     </div>

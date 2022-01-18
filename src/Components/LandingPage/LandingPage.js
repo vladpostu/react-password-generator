@@ -1,7 +1,7 @@
 import React from 'react';
 import './LandingPage.css';
 
-import searching_girl from '../imgs/searching_girl.jpg';
+import searching_girl from '../../imgs/searching_girl.jpg';
 
 const LandingPage = () => {
     return (
@@ -9,9 +9,9 @@ const LandingPage = () => {
             <div>
                 <h1>Secure <br/>Password <br/> Generator</h1>
                 <p>Have you never needed a tool to invent passwords for you?</p>
-                <button className='btn btn-ligth btn-nb'>Here you are</button>
+                <a href='#password' className='btn btn-ligth btn-nb'>Here you are</a>
             </div>
-            <img src={searching_girl}/>
+            <img alt='searching girl vector' src={searching_girl}/>
         </div>
     );
 };
