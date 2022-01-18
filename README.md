@@ -3,7 +3,7 @@
 It's a password generator built with the javascript-based React framework.
 
 
-## How to make it work
+## How to run the app
 
 Clone the repository and get inside it.
 
