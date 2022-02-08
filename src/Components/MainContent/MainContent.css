@@ -12,10 +12,13 @@
     width: 200px;
 }
 
+.wave {
+    width: 100% !important;
+}
+
 #wave_1 {
     position: relative;
-    margin-top: 100px;
-    height: 125px;
+    margin-top: 75px;
     top: 20px;
 }
 
