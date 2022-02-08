@@ -61,37 +61,36 @@ class MainContent extends Component {
             })
         }
 
+        const getRandomNumber = (max) => {
+            let randomNumber = Math.floor(Math.random() * (max));
+            //console.log("Random number: " + randomNumber);
+  
+            return randomNumber;
+          };
+
+        const getRandomPassword = () => {
+            let passwordGenerated = "";
+            let i=0;
+
+            while(i<this.state.length) {
+              let randomCategory = getRandomNumber(Object.values(this.repository).length);
+              
+              if(Object.values(this.repository).at(randomCategory).length !== 0) {
+                  let randomRepository = Object.values(this.repository).at(randomCategory);
+                  passwordGenerated += Object.values(this.repository).at(randomCategory)[getRandomNumber(randomRepository.length)];
+                  i++;
+              }
+            }
+          
+            return passwordGenerated;  
+        };
+
         const handlePassword = (pas) => {
             this.setState({
                 password: pas
-            });
-
-            
+            });   
         }
 
-        const getRandomNumber = (max) => {
-          let randomNumber = Math.floor(Math.random() * (max));
-          //console.log("Random number: " + randomNumber);
-
-          return randomNumber;
-        };
-
-        const getRandomPassword = () => {
-          let passwordGenerated = "";
-          
-          let  i=0;
-          while(i<this.state.length) {
-            let randomCategory = getRandomNumber(Object.values(this.repository).length);
-
-            if(Object.values(this.repository).at(randomCategory).length !== 0) {
-                let randomRepository = Object.values(this.repository).at(randomCategory);
-                passwordGenerated += Object.values(this.repository).at(randomCategory)[getRandomNumber(randomRepository.length)];
-                i++;
-            }
-          }
-        
-          return passwordGenerated;  
-        };
 
         return (
             <div id='main_content'>
@@ -116,10 +115,11 @@ class MainContent extends Component {
                             <input type='checkbox' name='specialCharacters' checked={this.state.includeSpecialCharacters} onChange={(e) => handleSpecialCharacters(e.target.checked)}/>
                         </div>
                         
-                        <Tappable onTap={() => handlePassword(getRandomPassword())}>
-                            <button id='generate_button' className='btn btn-ligth'>Generate</button>
-                        </Tappable>
-                       
+                        <button id='generate_button' className='btn btn-ligth' onClick={() => {
+                            let randomPassword = getRandomPassword();
+                            handlePassword(randomPassword);
+                        }}>Generate</button>
+            
                         <PasswordDisplay key={this.state.password} password={this.state.password} />
                     </div>
                 </div>
