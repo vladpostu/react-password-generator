@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/static/css/main.11f2f0ef.css",
+    "main.js": "/static/js/main.0c9ad11d.js",
+    "static/media/searching_girl.jpg": "/static/media/searching_girl.8ac62c41fc0389fd4a3c.jpg",
+    "index.html": "/index.html",
+    "main.11f2f0ef.css.map": "/static/css/main.11f2f0ef.css.map",
+    "main.0c9ad11d.js.map": "/static/js/main.0c9ad11d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.11f2f0ef.css",
+    "static/js/main.0c9ad11d.js"
+  ]
+}
