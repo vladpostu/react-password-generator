@@ -4,6 +4,8 @@ import './MainContent.css';
 import PasswordDisplay from '../PasswordDisplay/PasswordDisplay';
 import wave_1 from '../../imgs/waves/wave_1.png';
 
+import Tappable from 'react-tappable';
+
 class MainContent extends Component {
 
     state = {
@@ -114,7 +116,9 @@ class MainContent extends Component {
                             <input type='checkbox' name='specialCharacters' checked={this.state.includeSpecialCharacters} onChange={(e) => handleSpecialCharacters(e.target.checked)}/>
                         </div>
                         
-                        <button id='generate_button' className='btn btn-ligth' onClick={() => handlePassword(getRandomPassword())}>Generate</button>
+                        <Tappable onTap={() => handlePassword(getRandomPassword())}>
+                            <button id='generate_button' className='btn btn-ligth' on onClick={() => handlePassword(getRandomPassword())}>Generate</button>
+                        </Tappable>
                         
                         <PasswordDisplay key={this.state.password} password={this.state.password} />
                     </div>
