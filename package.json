@@ -2,7 +2,7 @@
   "name": "react-password-generator",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://vladpostu.github.io",
+  "homepage": "https://vladpostu.github.io/react-password-generator/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
