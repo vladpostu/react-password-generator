@@ -114,7 +114,7 @@ class MainContent extends Component {
                             <input type='checkbox' name='specialCharacters' checked={this.state.includeSpecialCharacters} onChange={(e) => handleSpecialCharacters(e.target.checked)}/>
                         </div>
                         
-                        <button id='generate_button' className='btn btn-ligth' onClick={() => handlePassword(getRandomPassword())}>Generate</button>
+                        <button style={{cursor: 'pointer'}} id='generate_button' className='btn btn-ligth' onClick={() => handlePassword(getRandomPassword())}>Generate</button>
                         
                         <PasswordDisplay key={this.state.password} password={this.state.password} />
                     </div>
