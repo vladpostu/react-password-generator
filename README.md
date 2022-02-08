@@ -10,7 +10,7 @@ Easy password generator web-app builded with [React.js](https://reactjs.org/).
 
 ## Getting Started
 
-The web-app is a at [this](https://vladpostu.github.io/react-password-generator/) link.
+The web-app is avaiable at [this](https://vladpostu.github.io/react-password-generator/) link.
 
 ## Contribute
 
