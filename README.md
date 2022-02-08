@@ -1,25 +1,16 @@
 # react-password-generator
 
-It's a password generator built with the javascript-based React framework.
+Easy password generator web-app builded with [React.js](https://reactjs.org/).
 
+## Features
 
-## How to run the app
+- Easy to use
+- Possibility to create infinite different passwords
+- Multi-character concatenation
 
-Clone the repository and get inside it.
+## Getting Started
 
-Firstly you need to install the **react run enviroment**.
-
-Install node from [here](https://www.google.com/search?q=install+node&oq=install+node&aqs=chrome..69i57j69i59l3j69i60j69i61j69i60j69i61.1176j0j9&sourceid=chrome&ie=UTF-8) then **react-script** with 
-
-```bash
-    npm install react-scripts
-```
-
-Then run the command 
-
-```bash
-    npm start
-```
+The web-app is avaiable at [this](https://vladpostu.github.io/react-password-generator/) link.
 
 ## Contribute
 
