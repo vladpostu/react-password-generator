@@ -4,10 +4,10 @@
 <br />
 <div align="center">
   <a href="https://vladpostu.github.io/react-password-generator/">
-    <img src="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" alt="Logo" width="80" height="80">
+    <img src="https://cdn-icons-png.flaticon.com/512/483/483408.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">react-password-generato</h3>
+  <h3 align="center">react-password-generator</h3>
 
   <p align="center">
     An easy password generator made with [React.js](https://reactjs.org/)
