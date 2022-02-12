@@ -15,6 +15,7 @@ class MainContent extends Component {
         includeNumbers: false,
         includeSpecialCharacters: false,
         password: '',
+        copied: false,
     }
 
     repository = {
@@ -93,6 +94,18 @@ class MainContent extends Component {
             return passwordGenerated;  
         };
 
+        const handleCopied = (state) => {
+            this.setState({
+                copied: state,
+            })
+        }
+
+        const copy = () => {
+          this.setState({
+              copied: true,
+            }, () => console.log("copied: "+this.state.copied)
+          );
+        };
 
         return (
             <div id='main_content'>
@@ -117,9 +130,14 @@ class MainContent extends Component {
                             <input type='checkbox' name='specialCharacters' checked={this.state.includeSpecialCharacters} onChange={(e) => handleSpecialCharacters(e.target.checked)}/>
                         </div>
                         
-                        <button type='button' id='generate_button' className='btn btn-ligth' onClick={() => handlePassword(getRandomPassword())}>Generate</button>
+                        <button type='button' id='generate_button' className='btn btn-ligth' onClick={() => {handlePassword(getRandomPassword()); handleCopied(false)}}>Generate</button>
             
-                        <PasswordDisplay key={this.state.password} password={this.state.password} />
+                        <PasswordDisplay 
+                            key={this.state.password} 
+                            password={this.state.password} 
+                            copied={this.state.copied} 
+                            copy={() => copy}
+                        />
                     </div>
                 </div>
             </div>
