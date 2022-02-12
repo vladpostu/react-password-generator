@@ -58,7 +58,7 @@
 
 Have you ever needed an easy password generator that creates password for you?
 
-Here's why you should you:
+Here's some features:
 * Easy to use
 * Customizable length
 * Possibility to concatenate multiple type of characters!
