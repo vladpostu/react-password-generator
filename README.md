@@ -1,5 +1,7 @@
 # react-password-generator
 
+<img src='./readme_src/imgs/landing_image.png'>
+
 Easy password generator web-app builded with [React.js](https://reactjs.org/).
 
 ## Features
