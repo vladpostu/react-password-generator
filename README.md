@@ -10,7 +10,7 @@
   <h3 align="center">react-password-generator</h3>
 
   <p align="center">
-    An easy password generator made with [React.js](https://reactjs.org/)
+    An easy password generator made with React.js
     <br />
     <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
     <br />
