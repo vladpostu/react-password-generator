@@ -70,7 +70,6 @@ Here's why you should you:
 ### Built With
 
 * [React.js](https://reactjs.org/)
-* [Vue.js](https://vuejs.org/)
 * [Bootstrap](https://getbootstrap.com)
 * [ReactBootstrap](https://react-bootstrap.github.io/)
 * [react-animated-text](https://www.npmjs.com/package/react-animated-text)
