@@ -165,7 +165,7 @@ Distributed under the GNU License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@vladpostu_](https://instagram.com/vladpostu_) - vladposth@gmail.com
+Vlad - [@vladpostu_](https://instagram.com/vladpostu_) - vladposth@gmail.com
 
 Project Link: [https://vladpostu.github.io/react-password-generator/](https://vladpostu.github.io/react-password-generator/)
 
