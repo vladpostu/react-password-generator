@@ -7,19 +7,28 @@ class PasswordDisplay extends Component {
 
   state = {
     password: this.props.password,
-    copied: this.props.copied,
+    copied: false,
   };
 
+  handleCopy = (state) => {
+    this.setState({
+      copied: state
+    })
+  }
+
+  copy = () => {
+    this.handleCopy(true);
+  }
+
   render() {
-
-
     return (
-        <div id='password_display' onClick={this.props.copy()}>
+        <div id='password_display'>
             <h3>Your  ✨ password ✨ is</h3>
             <div id='password'>
               {this.state.password.length > 0 ? this.state.password : <Wave text='...' effectChange={0.5} delay={.5} />}
             </div> 
-            <span className="mt-2">{this.state.copied == true ? 'Copied!' : 'Copy'}</span>
+            <button className='btn btn-secondary mt-2' onClick={this.copy} >Copy</button>
+            <div className={'mt-2 fs-4' + this.state.copied ? 'd-none' : 'd-block'} >✔️ Copyed with success</div>
         </div>
     )
   };
