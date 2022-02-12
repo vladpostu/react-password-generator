@@ -17,10 +17,10 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
+[![Contributors][contributors-shield]][https://github.com/vladpostu/react-password-generator/contributors]
+[![Forks][forks-shield]][https://github.com/vladpostu/react-password-generator/forks]
+[![Stargazers][stars-shield]][https://github.com/vladpostu/react-password-generator/stars]
+[![Issues][issues-shield]][https://github.com/vladpostu/react-password-generator/issues]
 [![MIT License][license-shield]][license-url]
 
 
