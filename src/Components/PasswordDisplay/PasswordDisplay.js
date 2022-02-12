@@ -18,6 +18,7 @@ class PasswordDisplay extends Component {
 
   copy = () => {
     this.handleCopy(true);
+    navigator.clipboard.writeText(this.state.password);
   }
 
   render() {
@@ -27,8 +28,8 @@ class PasswordDisplay extends Component {
             <div id='password'>
               {this.state.password.length > 0 ? this.state.password : <Wave text='...' effectChange={0.5} delay={.5} />}
             </div> 
-            <button className='btn btn-secondary mt-2' onClick={this.copy} >Copy</button>
-            <div className={'mt-2 fs-4' + this.state.copied ? 'd-none' : 'd-block'} >✔️ Copyed with success</div>
+            <button className='btn btn-secondary mt-2' onClick={this.copy}>Copy</button>
+            <div className={'mt-3 fs-4 ' + (this.state.copied ? 'd-block' : 'd-none')} >✔️ Copyed with success</div>
         </div>
     )
   };
