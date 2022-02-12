@@ -131,7 +131,7 @@ Password can be generated with the `Generate` button and for the _copy to clipbo
 - [x] Copy to clipboard function
 - [ ] User managament
 
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/vladpostu/react-password-generator/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
